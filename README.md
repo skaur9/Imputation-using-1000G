@@ -13,7 +13,15 @@ Another benefit of imputation lies in increasing the power to detect an associat
 
 
 Resources and articles on Imputation
+Genotype Imputation from Large Reference Panels
 https://www.annualreviews.org/doi/10.1146/annurev-genom-083117-021602
+
+Tutorial:Produce PCA bi-plot for 1000 Genomes Phase III - Version 2
+https://www.biostars.org/p/335605/
+
+Principal Components Analysis of the 1000 Genome Project Phase I Data
+https://wangjingke.com/2015/08/04/Principal-Components-Analysis-of-the-1000-Genome-Project-Phase-I-Data
+
 
 
 
