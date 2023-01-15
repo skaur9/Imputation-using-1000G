@@ -22,6 +22,9 @@ https://www.biostars.org/p/335605/
 Principal Components Analysis of the 1000 Genome Project Phase I Data
 https://wangjingke.com/2015/08/04/Principal-Components-Analysis-of-the-1000-Genome-Project-Phase-I-Data
 
+Imputation and quality control steps for combining multiple genome-wide datasets
+https://www.frontiersin.org/articles/10.3389/fgene.2014.00370/full
+
 
 
 
