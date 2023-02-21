@@ -1,3 +1,4 @@
+## Author: Simranjeet Kaur
 
 ################################
 ### Seperate data for each chromosome 
