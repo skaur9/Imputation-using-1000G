@@ -14,7 +14,7 @@ cd /home/projects/####/data/1000_genome
 
 for chr in {1..22}; do
 
-java -jar conform-gt.24May16.cee.jar gt=dk3a_14/dk3a_chr"${chr}".vcf.gz chrom=$chr ref=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/chr"${chr}".1kg.phase3.v5a.vcf.gz out=dk3a_14_mod_files/dk3a_14_mod_chr"${chr}"  excludesamples=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/non.eur.excl.txt;\
+java -jar conform-gt.24May16.cee.jar gt=Dupsremoved_chr"${chr}".vcf.gz chrom=$chr ref=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/chr"${chr}".1kg.phase3.v5a.vcf.gz out=mod_chr"${chr}"  excludesamples=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/non.eur.excl.txt;\
 done
 
 
@@ -38,9 +38,20 @@ done
 #2	206417755	rs574286642;.;rs576039119	AGAA	AGAAGAA,AGAG,A
 #2	221264917	.;esv3594380	TTATCATTTTTATATATTATTAGTATAAATTTGCTATAATTTTGCTTATTTTTTTGCATCTGTATTCATTAA	TAATATCATTTTTATATATTATTAGTATAAATTTGCTATAATTTTGCTTATTTTTTTGCATCTGTATTCATTAA,T
 
-#Updated file after removing the non-unique marker IDs: chr2.1kg.phase3.v5a_updated7.vcf.gz 
+#Updated file after removing the non-unique marker IDs and saved as chr2.1kg.phase3.v5a_updated7.vcf.gz 
 
 # Re-run the conform-gt tool with chr2.1kg.phase3.v5a_updated7.vcf.gz 
 
-java -jar conform-gt.24May16.cee.jar gt=dk3a_14/dk3a_chr2.vcf.gz chrom=$chr ref=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/chr2.1kg.phase3.v5a_updated7.vcf.gz out=dk3a_14_mod_files/dk3a_14_mod_chr"${chr}"  excludesamples=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/non.eur.excl.txt;\
+java -jar conform-gt.24May16.cee.jar gt=Dupsremoved_chr2.vcf.gz chrom=$chr ref=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/chr2.1kg.phase3.v5a_updated7.vcf.gz out=mod_chr"${chr}"  excludesamples=/home/projects/####/data/1000_genome/1000GP_Phase3/beagle_files/non.eur.excl.txt;\
 
+
+##Make index of vcf files using bcftools
+
+for chr in {1..22}; do \
+bcftools index mod_chr"${chr}".vcf.gz;
+done
+
+
+##Merge all vcf files 
+
+bcftools merge *vcf.gz --force-samples -Oz -o merged.vcf.gz
