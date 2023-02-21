@@ -1,3 +1,6 @@
+## Author: Simranjeet Kaur
+
+
 #!/bin/bash
 #PBS -W group_list=#### -A ####
 #PBS -N strand_issue_Conform-gt
