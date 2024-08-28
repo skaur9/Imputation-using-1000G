@@ -1,4 +1,4 @@
-# Imputation using 1000G reference panel
+# Imputation using 1000G and HRC reference panel
 
 This repository explains the steps involved in Whole Genome Imputation using 1000G as reference panel
 
